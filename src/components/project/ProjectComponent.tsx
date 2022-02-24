@@ -4,9 +4,7 @@ import ProjectListComponent from './ProjectListComponent'
 function ProjectComponent() {
 	return (
 		<>
-			<div className="container">
-				<ProjectListComponent />
-			</div>
+			<ProjectListComponent />
 		</>
 	)
 }
