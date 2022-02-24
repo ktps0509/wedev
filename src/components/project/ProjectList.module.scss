@@ -23,13 +23,13 @@
 
 .btn {
     font: inherit;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 0.5rem;
     cursor: pointer;
     border-radius: 4px;
     background-color: #800040;
     color: white;
     border: 1px solid #800040;
-    margin: 0 1rem;
+    min-width: 100px;
 
     &:hover {
         background-color: #9c1458;
@@ -39,4 +39,5 @@
 
 .actions {
     text-align: right;
+    margin-top: 1.5rem;
 }

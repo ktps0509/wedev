@@ -32,7 +32,7 @@ const ProjectModel: ProjectModel[] = [
 function Project() {
 	return (
 		<>
-			<div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1'>
+			<div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
 				{ProjectModel.map(function (project) {
 					return project && <ProjectListComponent key={project.id} project={project} />
 				})}
