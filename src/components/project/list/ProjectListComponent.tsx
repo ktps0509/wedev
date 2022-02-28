@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './ProjectList.module.scss'
 import classNames from 'classnames'
-import { ProjectModel } from '@/model/Project.model'
+import { ProjectModel } from '@/model/Project/Project.model'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
@@ -36,17 +36,15 @@ function ProjectListComponent(props: propsData): JSX.Element {
 					{project?.startDate}
 				</p>
 
-				<div className={styles.actions}>
-					<div className='grid sm:grid-cols-2 grid-cols-1'>
-						<button className={classNames('mx-4', styles['btn'])} onClick={deleteProject}>
-							Delete
+				<div className='grid grid-cols-2 gap-4 mt-5'>
+					<button className={classNames(styles['btn'])} onClick={deleteProject}>
+						Delete
+					</button>
+					<Link href={`/project/detail/${project?.id}`} passHref >
+						<button className={classNames('sm:mt-0 mt-3', styles['btn'])}>
+							View
 						</button>
-						<Link href={`/project/${project?.id}`} passHref >
-							<button className={classNames('sm:mt-0 mt-3 mx-4', styles['btn'])}>
-								View
-							</button>
-						</Link>
-					</div>
+					</Link>
 				</div>
 			</div>
 		</>

@@ -1,5 +1,5 @@
-import ProjectDetailComponent from '@/components/project/ProjectDetailComponent'
-import { ProjectModel } from '@/model/Project.model'
+import ProjectDetailComponent from '@/components/project/detail/ProjectDetailComponent'
+import { ProjectModel } from '@/model/Project/Project.model'
 import { useRouter } from 'next/router'
 import React from 'react'
 
@@ -10,7 +10,7 @@ function ProjectDetail() {
 
 	const ProjectDetail: ProjectModel =
 	{
-		id: 1,
+		id: Number(id),
 		title: 'PDMO',
 		detail: 'PDMO detail',
 		startDate: '18/10/21'

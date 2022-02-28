@@ -13,17 +13,18 @@ function Sidebar(): JSX.Element {
 	const navigation = [
 		{ name: 'Home', href: '/', current: true },
 		{ name: 'Team', href: '/team', current: false },
-		{ name: 'Projects', href: '/project', current: false },
+		// { name: 'Projects', href: '/project', current: false },
+		{ name: 'Knowledge', href: '/knowledge', current: false },
 	]
 
 	const router = useRouter();
 
 	return (
-		<div className="container bg-black md:w-80">
-			<aside className='md:block hidden'>
+		<div className="container pr-4 bg-black md:w-80">
+			<aside className='md:block hidden w-full'>
 				{navigation.map((item) => (
-					<Disclosure key={item.name}>
-						<Disclosure.Button className={`flex p-2 hover:text-red-600 cursor-pointer ${router.asPath == item.href ? 'text-red-600 font-semibold' : 'text-white font-normal'
+					<Disclosure key={item.name} >
+						<Disclosure.Button className={`flex pl-4 py-3 w-full hover:text-red-600 hover:bg-zinc-700 cursor-pointer ${router.asPath == item.href ? 'text-red-600 font-semibold' : 'text-white font-normal'
 							}`}>
 							<Link href={item.href}>
 								{item.name}
