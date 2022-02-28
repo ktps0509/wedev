@@ -10,7 +10,7 @@ function Layout(props: React.HTMLAttributes<HTMLDivElement>): JSX.Element {
 				<div className='flex flex-col md:flex-row flex-1'>
 					<Sidebar />
 					<main className='flex-1'>
-						<div className="container">
+						<div className="container mt-5">
 							{props.children}
 						</div>
 					</main>
