@@ -15,7 +15,7 @@ function KnowledgeListComponents(props: knowledge): JSX.Element {
 
 	return (
 		<>
-			<div className={classNames(styles['knowledgeCard'])}>
+			<div className={classNames(styles['knowledgeCard'], 'hover:cursor-pointer')}>
 				<Link href={`/knowledge/detail/${knowledgeData?.id}`} passHref>
 					<img src={knowledgeData?.image} alt="" />
 				</Link>
