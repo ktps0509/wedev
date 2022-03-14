@@ -1,8 +1,9 @@
 export type KnowledgeListModel = {
-	id: number,
-	title: string,
-	image: string,
-	authur: string,
+	_id: string
+	author: string
+	createDate: string
+	title: string
+	image: string
 }
 
 export type KnowledgeDetailModel = {
