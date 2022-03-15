@@ -16,14 +16,14 @@ function KnowledgeListComponents(props: knowledge): JSX.Element {
 	return (
 		<>
 			<div className={classNames(styles['knowledgeCard'], 'hover:cursor-pointer')}>
-				<Link href={`/knowledge/detail/${knowledgeData?.id}`} passHref>
+				<Link href={`/knowledge/detail/${knowledgeData?._id}`} passHref>
 					<img src={knowledgeData?.image} alt="" />
 				</Link>
-				<Link href={`/knowledge/detail/${knowledgeData?.id}`} passHref>
+				<Link href={`/knowledge/detail/${knowledgeData?._id}`} passHref>
 					<h4>{knowledgeData?.title}</h4>
 				</Link>
 				<p className="text-gray-400 font-light">
-					{knowledgeData?.authur}
+					{knowledgeData?.author}
 				</p>
 			</div>
 		</>
