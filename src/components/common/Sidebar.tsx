@@ -13,7 +13,7 @@ function Sidebar(): JSX.Element {
 	const navigation = [
 		{ name: 'Home', href: '/', current: true },
 		{ name: 'Team', href: '/team', current: false },
-		// { name: 'Projects', href: '/project', current: false },
+		{ name: 'Projects', href: '/project', current: false },
 		{ name: 'Knowledge', href: '/knowledge', current: false },
 	]
 
