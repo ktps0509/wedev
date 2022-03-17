@@ -1,51 +1,30 @@
 import React from 'react'
 import styles from './ProjectList.module.scss'
 import classNames from 'classnames'
-import { ProjectModel } from '@/model/Project/Project.model'
+import { ProjectListModel } from '@/model/Project/Project.model'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-type propsData = {
-	project?: ProjectModel
+type project = {
+	projectData?: ProjectListModel
 }
 
-function ProjectListComponent(props: propsData): JSX.Element {
+function ProjectListComponent(props: project): JSX.Element {
 
-	const { project } = props
-	const router = useRouter()
-
-	function viewProject() {
-		router.push('/project/' + project?.id)
-	}
-
-	function deleteProject() {
-		console.log('deleteProject')
-		console.log(project?.title)
-	}
+	const { projectData } = props
 
 	return (
 		<>
-			<div className={classNames(styles['card'])}>
-				<h2>
-					{project?.title}
-				</h2>
-				<p>
-					{project?.detail}
+			<div className={classNames(styles['knowledgeCard'], 'hover:cursor-pointer')}>
+				<Link href={`/knowledge/detail/${projectData?._id}`} passHref>
+					<img src={projectData?.image} alt="" />
+				</Link>
+				<Link href={`/knowledge/detail/${projectData?._id}`} passHref>
+					<h4>{projectData?.title}</h4>
+				</Link>
+				<p className="text-gray-400 font-light">
+					{projectData?.author}
 				</p>
-				<p>
-					{project?.startDate}
-				</p>
-
-				<div className='grid grid-cols-2 gap-4 mt-5'>
-					<button className={classNames(styles['btn'])} onClick={deleteProject}>
-						Delete
-					</button>
-					<Link href={`/project/detail/${project?.id}`} passHref >
-						<button className={classNames('sm:mt-0 mt-3', styles['btn'])}>
-							View
-						</button>
-					</Link>
-				</div>
 			</div>
 		</>
 	)

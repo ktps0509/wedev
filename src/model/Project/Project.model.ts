@@ -4,3 +4,11 @@ export type ProjectModel = {
 	detail: string,
 	startDate: string
 }
+
+export type ProjectListModel = {
+	_id: string
+	author: string
+	createDate: string
+	title: string
+	image: string
+}
